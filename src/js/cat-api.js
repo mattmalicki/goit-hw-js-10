@@ -20,7 +20,8 @@ async function fetchCatByBreed(breedId) {
     return await axios
       .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
       .then(function (response) {
-        return response.data;
+        console.log(response);
+        return response.data[0];
       });
   } catch (error) {
     console.log(error);
