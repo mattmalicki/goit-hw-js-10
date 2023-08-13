@@ -6,11 +6,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const selectEl = document.querySelector('.breed-select');
 
 const loaderEl = document.querySelector('.loader');
-const errorEl = document.querySelector('.error');
 const catsEl = document.querySelector('.cat-info');
 
 selectEl.classList.add('is-hidden');
-errorEl.classList.add('is-hidden');
 
 fetchBreeds()
   .then(function (response) {
@@ -28,7 +26,10 @@ fetchBreeds()
   })
   .catch(function () {
     new Notify.failure('Ops. Something went wrong. Try reloading page...', {
-      timeout: Infinity,
+      timeout: 10000,
+      width: '500px',
+      backOverlay: true,
+      position: 'center-center',
     });
   });
 
@@ -41,13 +42,18 @@ selectEl.addEventListener('change', function (event) {
       showCat(response);
     })
     .catch(function () {
-      errorEl.classList.remove('is-hidden');
+      new Notify.failure('Ops. Something went wrong. Try reloading page...', {
+        timeout: 10000,
+        width: '500px',
+        backOverlay: true,
+        position: 'center-center',
+      });
     });
 });
 
 function showCat(cat) {
   const imgEl = `<img src="${cat.url}" width="300px" />`;
-  const infoEl = `<div><h2>${cat.breeds[0].name}</h2><p>${cat.breeds[0].description}</p><p>${cat.breeds[0].temperament}</p></div>`;
+  const infoEl = `<div class="cat-info__info"><h2 class="cat-info__name">${cat.breeds[0].name}</h2><p class="cat-info__temperament">${cat.breeds[0].description}</p><p>${cat.breeds[0].temperament}</p></div>`;
   catsEl.insertAdjacentHTML('beforeend', imgEl);
   catsEl.insertAdjacentHTML('beforeend', infoEl);
 }

@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  gap: 20px;
 }
 
 .is-hidden {
@@ -365,10 +366,20 @@ body {
 }
 
 .cat-info {
+  width: 100%;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  gap: 20px;
+}
+.cat-info__info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @keyframes mask-animation {
