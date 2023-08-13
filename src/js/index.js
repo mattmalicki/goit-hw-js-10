@@ -1,6 +1,7 @@
 import { fetchCatByBreed, fetchBreeds } from './cat-api';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const selectEl = document.querySelector('.breed-select');
 
@@ -26,7 +27,9 @@ fetchBreeds()
     });
   })
   .catch(function () {
-    errorEl.classList.remove('is-hidden');
+    new Notify.failure('Ops. Something went wrong. Try reloading page...', {
+      timeout: Infinity,
+    });
   });
 
 selectEl.addEventListener('change', function (event) {

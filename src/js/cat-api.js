@@ -6,7 +6,7 @@ axios.defaults.headers.common['x-api-key'] =
 async function fetchBreeds() {
   try {
     return await axios
-      .get(`https://api.thecatapi.com/v1/breeds`)
+      .get(`https://apis.thecatapi.com/v1/breeds`)
       .then(function (response) {
         return response.data;
       });

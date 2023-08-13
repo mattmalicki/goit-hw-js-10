@@ -6,10 +6,17 @@
 body {
   padding: 20px;
   background-color: #e7dfdd;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .is-hidden {
   display: none;
+}
+
+.breed-select {
+  width: 500px;
 }
 
 .loading-cat {
@@ -355,6 +362,13 @@ body {
   transform: rotate(25deg);
   animation: foot-animation 2.5s infinite;
   animation-timing-function: cubic-bezier(0.2, 0, 0.45, 1);
+}
+
+.cat-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 @keyframes mask-animation {

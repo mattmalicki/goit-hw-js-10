@@ -6,8 +6,15 @@
 body {
   padding: 20px;
   background-color: $color-background;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .is-hidden {
   display: none;
+}
+
+.breed-select {
+  width: 500px;
 }
