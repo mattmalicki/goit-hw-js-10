@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 20px;
+  height: 100%;
 }
 
 .is-hidden {
@@ -368,18 +369,30 @@ body {
 .cat-info {
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   gap: 20px;
+  height: 80%;
+}
+.cat-info__img {
+  width: 100%;
+  height: calc(40% - 20px);
+  overflow: scroll;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+.cat-info__img-size {
+  width: 100%;
 }
 .cat-info__info {
+  width: 100%;
+  height: calc(20% - 20px);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
+  gap: 20px;
 }
 
 @keyframes mask-animation {

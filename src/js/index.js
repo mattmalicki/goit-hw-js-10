@@ -52,8 +52,8 @@ selectEl.addEventListener('change', function (event) {
 });
 
 function showCat(cat) {
-  const imgEl = `<img src="${cat.url}" width="300px" />`;
+  const imgEl = `<div class='cat-info__img'><img src="${cat.url}"  class="cat-info__img-size" /></div>`;
   const infoEl = `<div class="cat-info__info"><h2 class="cat-info__name">${cat.breeds[0].name}</h2><p class="cat-info__temperament">${cat.breeds[0].description}</p><p>${cat.breeds[0].temperament}</p></div>`;
-  catsEl.insertAdjacentHTML('beforeend', imgEl);
   catsEl.insertAdjacentHTML('beforeend', infoEl);
+  catsEl.insertAdjacentHTML('beforeend', imgEl);
 }
