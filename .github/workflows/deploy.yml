@@ -16,6 +16,9 @@ jobs:
           npm ci
           npm run build
 
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:

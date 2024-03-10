@@ -1,7 +1,7 @@
 import axios from 'axios';
+import 'dotenv/config';
 
-axios.defaults.headers.common['x-api-key'] =
-  'live_adGnUxbWYcxTxUSSgRxrxWJV9G0w4frkcy3lrXvrHaFFioNggB6zhcIsWKnL74ip';
+axios.defaults.headers.common['x-api-key'] = process.env.X_API_KEY;
 
 async function fetchBreeds() {
   try {
